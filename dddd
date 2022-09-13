@@ -24,7 +24,7 @@ local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
-local Repository = "https://raw.githubusercontent.com/RBXCheatere/ddad2/main/"
+local Repository = "https://raw.githubusercontent.com/coastss/universal/main/"
 local BaseTweenInfo = TweenInfo.new(0.75, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
 
 --// Loader
@@ -678,8 +678,7 @@ Library.ConfigManager = {} do
     end
 end
 
-(game:HttpGet('https://garfieldscripts.xyz/ui-libs/janlib.lua'))()
-
+loadstring(game:HttpGet('https://garfieldscripts.xyz/ui-libs/janlib.lua'))()
 
 
 
@@ -698,6 +697,21 @@ LegitMain:AddToggle({text = "Use Field of View", flag = "Aimbot Enabled", callba
 
 
 end , state = false})
+TweenService:Create(Dot1, BaseTweenInfo, {ImageColor3 = Color3.fromRGB(116, 255, 132)}):Play()
+TweenService:Create(Dot2, BaseTweenInfo, {ImageColor3 = Color3.fromRGB(116, 255, 132)}):Play()
+WaitForTweenToEnd(TweenService:Create(Dot3, BaseTweenInfo, {ImageColor3 = Color3.fromRGB(116, 255, 132)}))
+
+TweenService:Create(Dot1, BaseTweenInfo, {ImageTransparency = 1}):Play()
+TweenService:Create(Dot2, BaseTweenInfo, {ImageTransparency = 1}):Play()
+WaitForTweenToEnd(TweenService:Create(Dot3, BaseTweenInfo, {ImageTransparency = 1}))
+WaitForTweenToEnd(TweenService:Create(Status, BaseTweenInfo, {TextTransparency = 0}))
+
+task.wait(2)
+TweenService:Create(Status, BaseTweenInfo, {TextTransparency = 1, TextStrokeTransparency = 1}):Play()
+WaitForTweenToEnd(TweenService:Create(Border, BaseTweenInfo, {BackgroundTransparency = 1}))
+TweenService:Create(Holder, TweenInfo.new(0.75, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 0, 0, 0)}):Play()
+WaitForTweenToEnd(TweenService:Create(UICorner, TweenInfo.new(0.75, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {CornerRadius = UDim.new(1, 0)}))
+UI:Destroy()
 library:Init();
 library:selectTab(library.tabs[1]);
 
